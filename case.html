@@ -141,7 +141,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     `<a class="btn" href="${P.src}" target="_blank" rel="noopener">View code on GitHub ↗</a>`;
   $('facts').innerHTML = [
     ['Type', P.kind], ['Status', P.demo ? '● Live' : 'Code on GitHub'],
-    ['Stack', P.stack.map(k => SKILLS[k].name.replace(/ (.*)/, '')).join(', ')], ['Recognition', /1st|Top/.test(aw) ? aw.replace(/[🏆★]\s*/, '') : '—']
+    ['Stack', P.stack.map(k => SKILLS[k].name.replace(/ \(.*\)/, '')).join(', ')], ['Recognition', /1st|Top/.test(aw) ? aw.replace(/^[^A-Za-z0-9]+/u, '') : '—']
   ].map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
 
   if (P.demo) {
