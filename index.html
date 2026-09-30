@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khuwaish Goyal — AI & Full-Stack Developer</title>
+<meta name="description" content="Khuwaish Goyal — AI, data and full-stack developer from Bengaluru. 3× hackathon winner, 4 internships, 20+ live projects. Available for full-time roles and freelance work.">
+<meta property="og:title" content="Khuwaish Goyal — AI & Full-Stack Developer">
+<meta property="og:description" content="AI apps, web apps & APIs, mobile apps and data dashboards. 20+ live projects. Available for hire.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3EKG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg2:#f6f7f9;--ink:#0f172a;--ink2:#334155;--mute:#64748b;--line:#e5e7eb;--card:#ffffff;
+  --brand:#2563eb;--brand2:#1d4ed8;--brandsoft:#eff4ff;--ok:#16a34a;--gold:#b45309;--goldsoft:#fef3c7;
+  --r:16px;--shadow:0 1px 2px rgba(15,23,42,.05),0 8px 24px -12px rgba(15,23,42,.12);
+  --sans:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#0b0f17;--bg2:#111722;--ink:#f1f5f9;--ink2:#cbd5e1;--mute:#94a3b8;--line:#1f2937;--card:#121826;
+  --brand:#60a5fa;--brand2:#93c5fd;--brandsoft:#172238;--ok:#4ade80;--gold:#fbbf24;--goldsoft:#2a2110;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -12px rgba(0,0,0,.6)}}
+:root[data-theme=dark]{
+  --bg:#0b0f17;--bg2:#111722;--ink:#f1f5f9;--ink2:#cbd5e1;--mute:#94a3b8;--line:#1f2937;--card:#121826;
+  --brand:#60a5fa;--brand2:#93c5fd;--brandsoft:#172238;--ok:#4ade80;--gold:#fbbf24;--goldsoft:#2a2110;--shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -12px rgba(0,0,0,.6)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px}
+.eyebrow{font:600 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+h2.sec{font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.15;letter-spacing:-.025em;font-weight:800;margin:8px 0 12px}
+.lead{color:var(--ink2);font-size:1.08rem;max-width:640px}
+section{padding:clamp(64px,9vw,110px) 0}
+section.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:.95rem;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:.2s;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--ink2);transform:translateY(-1px)}
+.btn.p{background:var(--brand);border-color:var(--brand);color:#fff}
+:root[data-theme=dark] .btn.p{color:#0b0f17}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.p{color:#0b0f17}}
+.btn.p:hover{background:var(--brand2);border-color:var(--brand2)}
+.btn.sm{padding:8px 14px;font-size:.86rem;border-radius:8px}
+.tag{display:inline-block;font:500 .74rem var(--mono);padding:3px 9px;border-radius:6px;background:var(--bg2);border:1px solid var(--line);color:var(--ink2)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand i{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:700 .85rem var(--sans);font-style:normal}
+.links{display:flex;gap:26px;font-size:.93rem;font-weight:500;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+.nav-r{display:flex;gap:10px;align-items:center}
+.theme{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:1rem}
+@media (max-width:860px){.links{display:none}}
+
+/* hero */
+.hero{padding:clamp(56px,8vw,96px) 0 clamp(48px,7vw,80px)}
+.hero-g{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.avail{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:99px;background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--ok);font-weight:600;font-size:.85rem}
+.avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 8px transparent}}
+h1{font-size:clamp(2.4rem,5.6vw,4rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:18px 0}
+h1 span{color:var(--brand)}
+.hero p.lead{font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat{padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.stat b{display:block;font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.stat span{color:var(--mute);font-size:.85rem}
+.idcard{border:1px solid var(--line);border-radius:20px;background:var(--card);box-shadow:var(--shadow);padding:28px}
+.avatar{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--brand),#7c3aed);color:#fff;display:grid;place-items:center;font:800 1.8rem var(--sans);overflow:hidden;position:relative}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.idcard h3{font-size:1.25rem;margin-top:16px}.idcard .role{color:var(--mute)}
+.idcard ul{margin-top:18px;display:grid;gap:10px;font-size:.93rem;color:var(--ink2)}
+.idcard li{display:flex;gap:10px}.idcard li b{min-width:92px;color:var(--mute);font-weight:500}
+.idcard .soc{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+@media (max-width:900px){.hero-g{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* logos strip */
+.strip{padding:22px 0;border-block:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:center;color:var(--mute);font-weight:600;font-size:.92rem}
+.strip small{font:600 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+
+/* services */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:16px;margin-top:36px}
+.svc{padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);transition:.25s}
+.svc:hover{border-color:var(--brand);box-shadow:var(--shadow);transform:translateY(-3px)}
+.svc .ic{width:46px;height:46px;border-radius:12px;background:var(--brandsoft);color:var(--brand);display:grid;place-items:center;font-size:1.3rem}
+.svc h3{font-size:1.1rem;margin:16px 0 8px}.svc p{color:var(--ink2);font-size:.94rem}
+.svc ul{margin-top:14px;display:grid;gap:6px;font-size:.88rem;color:var(--ink2)}
+.svc li::before{content:"✓";color:var(--ok);font-weight:700;margin-right:8px}
+.svc .ex{margin-top:14px;font-size:.84rem;color:var(--mute)}.svc .ex a{color:var(--brand);font-weight:600}
+
+/* work */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.filters button{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink2);font:500 .88rem var(--sans);cursor:pointer}
+.filters button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.work{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;margin-top:22px}
+.case{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);background:var(--card);overflow:hidden;transition:.25s}
+.case:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:color-mix(in srgb,var(--brand) 40%,var(--line))}
+.thumb{position:relative;aspect-ratio:16/9;background:var(--bg2);overflow:hidden;border-bottom:1px solid var(--line)}
+.thumb iframe{position:absolute;top:0;left:0;width:400%;height:400%;transform:scale(.25);transform-origin:0 0;border:0;pointer-events:none}
+.thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font:800 1.6rem var(--sans);color:#fff;letter-spacing:-.02em;padding:16px;text-align:center}
+.thumb .live{position:absolute;top:10px;left:10px;z-index:2;font:600 .72rem var(--mono);padding:4px 9px;border-radius:6px;background:rgba(22,163,74,.92);color:#fff}
+.case .body{padding:20px 20px 18px;display:flex;flex-direction:column;flex:1}
+.case .award{display:inline-block;align-self:flex-start;font-size:.78rem;font-weight:700;color:var(--gold);background:var(--goldsoft);padding:3px 9px;border-radius:6px;margin-bottom:10px}
+.case h3{font-size:1.15rem;letter-spacing:-.01em}.case .kind{color:var(--mute);font-size:.84rem;margin-top:2px}
+.case p{color:var(--ink2);font-size:.93rem;margin-top:10px}
+.case .res{margin-top:10px;font-size:.88rem;color:var(--ink2)}.case .res b{color:var(--ink)}
+.case .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.case .acts{display:flex;gap:8px;margin-top:auto;padding-top:18px}
+.more-work{margin-top:28px;text-align:center}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px;counter-reset:s}
+.step{padding:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font:600 .8rem var(--mono);color:var(--brand)}
+.step h3{font-size:1.05rem;margin:8px 0 6px}.step p{color:var(--ink2);font-size:.92rem}
+
+/* experience */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.col h3.ct{font-size:1.05rem;margin-bottom:14px}
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:22px}
+.tl li{position:relative}.tl li::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--brand)}
+.tl h4{font-size:1rem}.tl .meta{color:var(--mute);font-size:.86rem}.tl p{color:var(--ink2);font-size:.92rem;margin-top:4px}
+.aw{display:grid;gap:10px}
+.aw li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.aw .pl{min-width:52px;text-align:center;font:800 .85rem var(--sans);padding:6px 0;border-radius:8px;background:var(--bg2);color:var(--ink2)}
+.aw .pl.g{background:var(--goldsoft);color:var(--gold)}
+.aw h4{font-size:.96rem}.aw p{color:var(--mute);font-size:.86rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:36px}
+.sg{padding:22px;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.sg h3{font-size:.95rem;margin-bottom:12px}
+.sg .row{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:.9rem;color:var(--ink2)}
+.sg img{width:20px;height:20px}
+.sg .row span{flex:1}
+.bar{height:6px;width:90px;border-radius:99px;background:var(--bg2);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:99px;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.certs{margin-top:18px;color:var(--mute);font-size:.9rem}
+
+/* contact */
+.contact-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;margin-top:36px}
+@media (max-width:860px){.contact-g{grid-template-columns:1fr}}
+.cinfo{display:grid;gap:12px}
+.cinfo a{display:flex;gap:14px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);transition:.2s}
+.cinfo a:hover{border-color:var(--brand)}
+.cinfo .ci{width:40px;height:40px;border-radius:10px;background:var(--brandsoft);color:var(--brand);display:grid;place-items:center;font-weight:700}
+.cinfo small{display:block;color:var(--mute);font-size:.8rem}.cinfo b{font-size:.95rem;word-break:break-all}
+form{padding:26px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);box-shadow:var(--shadow);display:grid;gap:14px}
+label{font-size:.86rem;font-weight:600;color:var(--ink2);display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid color-mix(in srgb,var(--brand) 40%,transparent);border-color:var(--brand)}
+textarea{min-height:120px;resize:vertical}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:560px){.frow{grid-template-columns:1fr}}
+.fnote{font-size:.8rem;color:var(--mute)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a:hover{color:var(--ink)}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media print{.nav,.theme,form,.filters,.cta{display:none}section{padding:24px 0}.thumb{display:none}}
+.hero-g>*,.two>*,.contact-g>*{min-width:0}h1,h2{overflow-wrap:break-word}body{overflow-x:hidden}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>KG</i>Khuwaish Goyal</a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-r">
+      <button class="theme" id="theme" aria-label="Toggle dark mode">◐</button>
+      <a class="btn p sm" href="#contact">Hire me</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-g">
+    <div>
+      <span class="avail">Available for full-time roles &amp; freelance projects</span>
+      <h1>I build <span>AI-powered</span> web &amp; mobile apps that solve real problems.</h1>
+      <p class="lead">I'm Khuwaish Goyal, a Data Science engineer from Bengaluru. I design and ship AI tools, backends, Android &amp; Flutter apps and data dashboards — from idea to a live, working product.</p>
+      <div class="cta">
+        <a class="btn p" href="#contact">Start a project →</a>
+        <a class="btn" href="#work">View my work</a>
+        <a class="btn" href="assets/Khuwaish_Goyal_Master_Resume.pdf" download>Download CV ↓</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>3×</b><span>1st-place wins</span></div>
+        <div class="stat"><b>4</b><span>Internships</span></div>
+        <div class="stat"><b>20+</b><span>Live projects</span></div>
+        <div class="stat"><b>70+</b><span>GitHub repos</span></div>
+      </div>
+    </div>
+    <aside class="idcard">
+      <div class="avatar">KG<img src="assets/photo.jpg" alt="Khuwaish Goyal" onerror="this.remove()"></div>
+      <h3>Khuwaish Goyal</h3>
+      <p class="role">AI &amp; Full-Stack Developer</p>
+      <ul>
+        <li><b>Based in</b>Bengaluru, India (remote-friendly)</li>
+        <li><b>Education</b>B.Tech Data Science, Jain University (2026)</li>
+        <li><b>Focus</b>AI/ML apps · APIs · Mobile · Dashboards</li>
+        <li><b>Languages</b>English, Hindi</li>
+      </ul>
+      <div class="soc">
+        <a class="btn sm" href="https://www.linkedin.com/in/khuwaishgoyal" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn sm" href="https://github.com/KhuwaishGoyal28" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn sm" href="https://khuwaish-portfolio.vercel.app" target="_blank" rel="noopener">3D portfolio ↗</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap"><small>Recognised by</small><span>IEEE</span><span>Salesforce</span><span>Honeywell</span><span>Rakuten</span><span>Jain University</span><span>Accenture</span><span>IBM</span></div></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What I can do for you</p>
+    <h2 class="sec">Services</h2>
+    <p class="lead">Clear scope, working demos at every step, and clean code you own.</p>
+    <div class="grid4">
+      <article class="svc rv"><div class="ic">✦</div><h3>AI &amp; ML applications</h3>
+        <p>Chatbots, document/OCR automation, computer vision and prediction models — wrapped in an app people can use.</p>
+        <ul><li>LLM &amp; Gemini integrations</li><li>OCR + automated grading</li><li>Model training &amp; deployment</li></ul>
+        <p class="ex">e.g. <a href="https://ai-exam-evaluator-nine.vercel.app" target="_blank" rel="noopener">EvalPro</a>, <a href="https://fake-luxury-detection-web.vercel.app" target="_blank" rel="noopener">Fake luxury detector</a></p></article>
+      <article class="svc rv"><div class="ic">⌘</div><h3>Web apps &amp; APIs</h3>
+        <p>Fast, responsive web apps and REST backends with auth, databases and cloud storage.</p>
+        <ul><li>FastAPI / Flask backends</li><li>Supabase, Firebase, SQL</li><li>Deployed on Vercel</li></ul>
+        <p class="ex">e.g. <a href="https://ats-resume-matcher-nu.vercel.app" target="_blank" rel="noopener">ATS Resume Matcher</a></p></article>
+      <article class="svc rv"><div class="ic">▢</div><h3>Mobile apps</h3>
+        <p>Android (Java) and Flutter apps with multi-screen flows — also shipped as installable web apps.</p>
+        <ul><li>Android Studio &amp; Flutter</li><li>Firebase auth &amp; data</li><li>PWA versions for every device</li></ul>
+        <p class="ex">e.g. <a href="https://nayipehal-web.vercel.app" target="_blank" rel="noopener">NayiPehal</a>, <a href="https://fitforce-web.vercel.app" target="_blank" rel="noopener">FitForce</a></p></article>
+      <article class="svc rv"><div class="ic">▤</div><h3>Data &amp; dashboards</h3>
+        <p>Turn spreadsheets into decisions with clean data pipelines and interactive dashboards.</p>
+        <ul><li>Power BI &amp; Tableau</li><li>Pandas / SQL cleaning &amp; ETL</li><li>KPI &amp; trend analysis</li></ul>
+        <p class="ex">e.g. <a href="https://anova-web-gamma.vercel.app" target="_blank" rel="noopener">HR attrition dashboard</a></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2 class="sec">Case studies with live demos</h2>
+    <p class="lead">Every project below is live — click “Live demo” and try it yourself.</p>
+    <div class="filters" id="filters"></div>
+    <div class="work" id="work-grid"></div>
+    <div class="more-work"><a class="btn" href="https://github.com/KhuwaishGoyal28?tab=repositories" target="_blank" rel="noopener">See all 70+ repositories on GitHub ↗</a></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <p class="eyebrow">How I work</p>
+    <h2 class="sec">A simple, transparent process</h2>
+    <div class="steps">
+      <div class="step rv"><h3>Understand</h3><p>A short call to understand your goal, users and deadline. You get a clear written scope.</p></div>
+      <div class="step rv"><h3>Prototype</h3><p>A clickable first version early, so you can give feedback before anything is final.</p></div>
+      <div class="step rv"><h3>Build &amp; test</h3><p>Regular updates with a live preview link. Clean, documented code on GitHub.</p></div>
+      <div class="step rv"><h3>Launch &amp; support</h3><p>Deployed live, handed over with a README, and support after launch for fixes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Background</p>
+    <h2 class="sec">Experience &amp; awards</h2>
+    <div class="two">
+      <div class="col rv">
+        <h3 class="ct">Internships</h3>
+        <ul class="tl">
+          <li><h4>AI Developer Intern · Zidio Developer</h4><p class="meta">May – Aug 2025</p><p>Built generative AI apps with Hugging Face pipelines (image &amp; GIF generation) and a multimodal Gemini chatbot with text + voice.</p></li>
+          <li><h4>Data Science Intern · Codespeedy</h4><p class="meta">Feb – Apr 2025</p><p>Wrote Python tutorials on data science and ML workflows, solving real business problems.</p></li>
+          <li><h4>Python Developer Intern · Moticonut</h4><p class="meta">Feb – Mar 2025</p><p>Built Python utilities and automated basic processes.</p></li>
+          <li><h4>Android Developer · Uptoskill</h4><p class="meta">Jan – Apr 2025</p><p>Real-time leave tracking on Firebase Cloud and a receipt-generation module; integrated cloud backends with the frontend.</p></li>
+        </ul>
+        <h3 class="ct" style="margin-top:30px">Education</h3>
+        <ul class="tl"><li><h4>B.Tech, Data Science · Jain (Deemed-to-be) University</h4><p class="meta">2022 – 2026 · Bengaluru</p></li></ul>
+      </div>
+      <div class="col rv">
+        <h3 class="ct">Awards</h3>
+        <ul class="aw">
+          <li><span class="pl g">1st</span><div><h4>IEEE Rapid Innovation Challenge 2024</h4><p>Integrated app for education and job access</p></div></li>
+          <li><span class="pl g">1st</span><div><h4>IEEE Sustainable Solutions for Humanity 2024</h4><p>AI-driven farmers’ app for sustainable agriculture</p></div></li>
+          <li><span class="pl g">1st</span><div><h4>Code Relay · Jain University</h4><p>Fraud detection using shortest-path algorithms</p></div></li>
+          <li><span class="pl">Top</span><div><h4>Salesforce Study Jam 2024</h4><p>Top team for the FitForce wellness app</p></div></li>
+          <li><span class="pl">8th</span><div><h4>Honeywell Hackathon</h4><p>Shortest-path dynamic building evacuation (simulation)</p></div></li>
+          <li><span class="pl">Final</span><div><h4>Rakuten Hackathon</h4><p>ABEA — AI-based personalised e-commerce app</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit</p>
+    <h2 class="sec">Skills &amp; technologies</h2>
+    <div class="skills" id="skills-grid"></div>
+    <p class="certs">Certifications: Data Analytics &amp; Visualization (Accenture) · Introduction to Tableau · Inferential Statistics · Introduction to AWS · Introduction to Firebase · Google Skill Badges · IBM Enterprise Data Science</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <p class="eyebrow">Let’s work together</p>
+    <h2 class="sec">Have a project or a role in mind?</h2>
+    <p class="lead">Tell me what you need. I usually reply within a day.</p>
+    <div class="contact-g">
+      <div class="cinfo">
+        <a href="mailto:goykhuwaish667@gmail.com"><span class="ci">@</span><span><small>Email</small><b>goykhuwaish667@gmail.com</b></span></a>
+        <a href="https://www.linkedin.com/in/khuwaishgoyal" target="_blank" rel="noopener"><span class="ci">in</span><span><small>LinkedIn</small><b>linkedin.com/in/khuwaishgoyal</b></span></a>
+        <a href="https://github.com/KhuwaishGoyal28" target="_blank" rel="noopener"><span class="ci">&lt;/&gt;</span><span><small>GitHub</small><b>github.com/KhuwaishGoyal28</b></span></a>
+        <a href="assets/Khuwaish_Goyal_Master_Resume.pdf" download><span class="ci">CV</span><span><small>Resume (PDF)</small><b>Master resume</b></span></a>
+        <a href="assets/Khuwaish_Goyal_Backend_Resume.pdf" download><span class="ci">CV</span><span><small>Resume (PDF)</small><b>Backend engineer resume</b></span></a>
+      </div>
+      <form id="cf">
+        <div class="frow">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <div class="frow">
+          <label>I'm looking for
+            <select name="type"><option>A freelance project</option><option>A full-time hire</option><option>An internship</option><option>Something else</option></select></label>
+          <label>Budget / timeline (optional)<input name="budget" placeholder="e.g. 2 weeks"></label>
+        </div>
+        <label>Project details<textarea name="msg" required placeholder="What would you like to build?"></textarea></label>
+        <button class="btn p" type="submit">Send message →</button>
+        <p class="fnote">This opens your email app with the message ready to send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Khuwaish Goyal · Bengaluru, India</span><span><a href="https://khuwaish-portfolio.vercel.app" target="_blank" rel="noopener">3D portfolio</a> · <a href="https://github.com/KhuwaishGoyal28" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/khuwaishgoyal" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  $('#yr').textContent = new Date().getFullYear();
+  // theme toggle (remembered per visitor)
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('kg-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  $('#theme').onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('kg-theme', root.dataset.theme); } catch (e) {}
+  };
+
+  const P = 'https://khuwaish-portfolio.vercel.app/project.html?p=';
+  const WORK = [
+    { t: 'EvalPro — AI Exam Evaluator', k: 'AI web app', c: 'AI', live: 'https://ai-exam-evaluator-nine.vercel.app', src: 'ai-exam-evaluator', case: 'evalpro', g: '#0f766e',
+      p: 'Upload a handwritten answer sheet; get OCR text, a 50-point rubric score and an annotated teacher-style checked paper.',
+      r: 'Works for school boards, JEE, NEET, UPSC and college exams.', tags: ['FastAPI', 'OCR', 'LLM', 'Supabase'] },
+    { t: 'NayiPehal', k: 'Android app + web', c: 'Mobile', a: '🏆 1st · IEEE Rapid Innovation 2024', live: 'https://nayipehal-web.vercel.app', src: 'NayiPehal', case: 'nayipehal', g: '#b45309',
+      p: 'Education, jobs, mentors and community support in one app for underserved communities.',
+      r: 'Onboarding, job board, courses, mentor booking, wellness and chatbot.', tags: ['Java', 'Android', 'SQLite', 'Gemini'] },
+    { t: 'FitForce', k: 'Android app + web', c: 'Mobile', a: '★ Top Team · Salesforce Study Jam 2024', live: 'https://fitforce-web.vercel.app', src: 'FITFORCE', case: 'fitforce', g: '#be123c',
+      p: 'A wellness app for working professionals — steps, workouts, meals, devices and a health-only chatbot.',
+      r: 'Full onboarding health profile and tracking dashboards.', tags: ['Java', 'Android', 'Firebase'] },
+    { t: 'Fake Luxury Detection', k: 'Computer vision', c: 'AI', live: 'https://fake-luxury-detection-web.vercel.app', src: 'Fake_Luxury_Detection', case: 'luxury', g: '#6d28d9',
+      p: 'A CNN (MobileNetV2) that tells real from fake luxury products — my trained model runs directly in the browser.',
+      r: 'Upload or camera input with real-time verdicts.', tags: ['TensorFlow', 'CNN', 'Flask', 'TF.js'] },
+    { t: 'ATS Resume Matcher', k: 'NLP tool', c: 'AI', live: 'https://ats-resume-matcher-nu.vercel.app', src: 'ATS-RESUME-MATCHER', case: 'ats', g: '#1d4ed8',
+      p: 'Scores how well a resume matches a job description and lists missing skills.',
+      r: 'Keyword + TF-IDF scoring; private, in-browser.', tags: ['NLP', 'scikit-learn', 'FastAPI'] },
+    { t: 'Signova', k: 'Accessibility · CV', c: 'AI', live: 'https://signova-web-omega.vercel.app', src: 'Signova', case: 'signova', g: '#0e7490',
+      p: 'Webcam sign-language translator that helps people who cannot hear communicate.',
+      r: 'Hand tracking with MediaPipe; recognises 14 letters and 5 phrases live.', tags: ['MediaPipe', 'Python', 'Computer vision'] },
+    { t: 'IntelliHire', k: 'Android app + web', c: 'Mobile', live: 'https://intellihire-web.vercel.app', src: 'IntelliHire', case: 'intellihire', g: '#4338ca',
+      p: 'Interview prep: timed aptitude/technical quizzes and a spoken mock interview with a scored report.',
+      r: 'Voice answers, camera preview, downloadable report.', tags: ['Java', 'Firebase', 'Speech'] },
+    { t: 'Gyaankosh', k: 'Android app + web', c: 'Mobile', live: 'https://gyaankosh-web.vercel.app', src: 'GayanKhosh', case: 'gyaankosh', g: '#a16207',
+      p: 'Timed quizzes across 8 programming topics with profiles and a leaderboard.',
+      r: '~470 questions across 3 difficulty levels.', tags: ['Java', 'Android', 'SQLite'] },
+    { t: 'AI Patient Diagnosis', k: 'Deep learning', c: 'AI', live: 'https://ai-patient-diagnosis-web.vercel.app', src: 'AI_Patient_Diagnosis', case: 'patient', g: '#b91c1c',
+      p: 'A PyTorch model that predicts patient health status from EHR data — same weights running in JavaScript.',
+      r: 'End-to-end pipeline; trained on synthetic data (learning project).', tags: ['PyTorch', 'Pandas', 'API'] },
+    { t: 'LSTM Forecasting', k: 'Time series', c: 'AI', live: 'https://lstm-web-silk.vercel.app', src: 'LSTM', case: 'lstm', g: '#3730a3',
+      p: 'A two-layer LSTM forecasting prices, with forecast-vs-actual charts.',
+      r: 'Pick any day and see the prediction.', tags: ['LSTM', 'Keras', 'Pandas'] },
+    { t: 'HR Attrition Dashboard', k: 'Data analytics', c: 'Data', live: 'https://anova-web-gamma.vercel.app', src: 'anova', case: 'hr', g: '#ca8a04',
+      p: 'Six KPIs and six linked charts that explain employee attrition, filterable by department.',
+      r: 'Built from my Power BI HR analytics work.', tags: ['Pandas', 'Power BI', 'Charts'] },
+    { t: 'Receipt Generator', k: 'Flutter app', c: 'Mobile', live: 'https://receipt-generator-web-three.vercel.app', src: 'receipt_generator', g: '#0369a1',
+      p: 'Create receipts with signatures and export them as PDF.',
+      r: 'Flutter build running on Android and the web.', tags: ['Flutter', 'Dart', 'PDF'] },
+    { t: 'Gemini Chatbot', k: 'Flutter app', c: 'AI', live: 'https://flutter-gemini-chatbot-web.vercel.app', src: 'flutter_gemini_chatbot', case: 'gemini', g: '#7c3aed',
+      p: 'A chatbot with voice input and spoken replies, built in Flutter.',
+      r: 'Gemini API integration; runs on Android and the web.', tags: ['Flutter', 'Gemini', 'Voice'] },
+    { t: 'Expense Calculator', k: 'Python utility', c: 'Data', live: 'https://ex-penture-calculator-web.vercel.app', src: 'ex-penture-calculator', g: '#15803d',
+      p: 'Track expenses with monthly and category summaries, plus CSV import/export.',
+      r: 'Original Python CLI turned into a web app.', tags: ['Python', 'CSV'] }
+  ];
+  const grid = $('#work-grid'), fl = $('#filters');
+  const cats = ['All', 'AI', 'Mobile', 'Data'];
+  fl.innerHTML = cats.map((c, i) => `<button class="${i ? '' : 'on'}" data-c="${c}">${c === 'AI' ? 'AI & ML' : c === 'Data' ? 'Data & tools' : c}</button>`).join('');
+  const lazy = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; const f = e.target.querySelector('iframe[data-src]');
+    if (f && innerWidth > 700) { f.src = f.dataset.src; f.removeAttribute('data-src'); }
+    lazy.unobserve(e.target);
+  }), { rootMargin: '200px' });
+  const render = c => {
+    grid.innerHTML = WORK.filter(w => c === 'All' || w.c === c).map(w => `
+      <article class="case">
+        <div class="thumb" style="background:linear-gradient(135deg,${w.g},#0f172a)">
+          <span class="live">● Live</span><div class="ph">${w.t.split(' — ')[0]}</div>
+          <iframe data-src="${w.live}" title="${w.t} preview" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts allow-same-origin"></iframe>
+        </div>
+        <div class="body">
+          ${w.a ? `<span class="award">${w.a}</span>` : ''}
+          <h3>${w.t}</h3><p class="kind">${w.k}</p>
+          <p>${w.p}</p><p class="res"><b>Outcome:</b> ${w.r}</p>
+          <div class="tags">${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <div class="acts">
+            <a class="btn p sm" href="${w.live}" target="_blank" rel="noopener">Live demo ↗</a>
+            <a class="btn sm" href="https://github.com/KhuwaishGoyal28/${w.src}" target="_blank" rel="noopener">Code</a>
+            ${w.case ? `<a class="btn sm" href="${P + w.case}" target="_blank" rel="noopener">Case study</a>` : ''}
+          </div>
+        </div>
+      </article>`).join('');
+    grid.querySelectorAll('.case').forEach(el => lazy.observe(el));
+  };
+  render('All');
+  fl.onclick = e => { const b = e.target.closest('button'); if (!b) return; fl.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b)); render(b.dataset.c); };
+
+  const DI = n => `https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/${n}.svg`;
+  const SK = [
+    ['AI & Machine Learning', [['Python', 'python/python-original', 90], ['Pandas & NumPy', 'pandas/pandas-original', 85], ['Scikit-learn', 'scikitlearn/scikitlearn-original', 80], ['TensorFlow / CNN', 'tensorflow/tensorflow-original', 65], ['Hugging Face & Gemini', null, 70]]],
+    ['Backend & Cloud', [['FastAPI & Flask', 'fastapi/fastapi-original', 75], ['SQL (MySQL, SQL Server)', 'mysql/mysql-original', 80], ['Firebase', 'firebase/firebase-plain', 80], ['Supabase', 'supabase/supabase-original', 60], ['AWS (basics)', 'amazonwebservices/amazonwebservices-original-wordmark', 45]]],
+    ['Mobile & Web', [['Java (Android)', 'java/java-original', 75], ['Android Studio', 'androidstudio/androidstudio-original', 80], ['Flutter / Dart', 'flutter/flutter-original', 70], ['HTML / CSS / JS', 'javascript/javascript-original', 70], ['Git & GitHub', 'git/git-original', 85]]],
+    ['Data & Visualization', [['Power BI', null, 85], ['Tableau', null, 80], ['Matplotlib & Seaborn', 'matplotlib/matplotlib-original', 80], ['ETL pipelines', null, 70], ['Jupyter', 'jupyter/jupyter-original', 85]]]
+  ];
+  $('#skills-grid').innerHTML = SK.map(([g, items]) => `<div class="sg rv"><h3>${g}</h3>${items.map(([n, ic, v]) =>
+    `<div class="row">${ic ? `<img src="${DI(ic)}" alt="" loading="lazy">` : '<span style="width:20px;flex:none;text-align:center">◆</span>'}<span>${n}</span><div class="bar"><i data-v="${v}"></i></div></div>`).join('')}</div>`).join('');
+
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; e.target.classList.add('in');
+    e.target.querySelectorAll('.bar i').forEach(b => b.style.width = b.dataset.v + '%');
+    io.unobserve(e.target);
+  }), { threshold: .15 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  $('#cf').onsubmit = e => {
+    e.preventDefault(); const f = new FormData(e.target);
+    const body = `Hi Khuwaish,\n\n${f.get('msg')}\n\nLooking for: ${f.get('type')}\nBudget / timeline: ${f.get('budget') || '-'}\n\n${f.get('name')}\n${f.get('email')}`;
+    location.href = 'mailto:goykhuwaish667@gmail.com?subject=' + encodeURIComponent(`${f.get('type')} — ${f.get('name')}`) + '&body=' + encodeURIComponent(body);
+  };
+})();
+</script>
+</body>
+</html>
