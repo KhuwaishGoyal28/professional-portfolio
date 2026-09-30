@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Khuwaish Goyal</title>
+<meta name="description" content="Case study by Khuwaish Goyal: the problem, what was built, how it works, the tech stack and a live demo.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3EKG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--bg2:#f6f7f9;--ink:#0f172a;--ink2:#334155;--mute:#64748b;--line:#e5e7eb;--card:#fff;--brand:#2563eb;--brand2:#1d4ed8;--brandsoft:#eff4ff;--gold:#b45309;--goldsoft:#fef3c7;--ok:#16a34a;
+  --shadow:0 1px 2px rgba(15,23,42,.05),0 12px 32px -14px rgba(15,23,42,.18);--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;--accent:#2563eb}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0f17;--bg2:#111722;--ink:#f1f5f9;--ink2:#cbd5e1;--mute:#94a3b8;--line:#1f2937;--card:#121826;--brand:#60a5fa;--brand2:#93c5fd;--brandsoft:#172238;--gold:#fbbf24;--goldsoft:#2a2110;--ok:#4ade80;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -14px rgba(0,0,0,.6)}}
+:root[data-theme=dark]{--bg:#0b0f17;--bg2:#111722;--ink:#f1f5f9;--ink2:#cbd5e1;--mute:#94a3b8;--line:#1f2937;--card:#121826;--brand:#60a5fa;--brand2:#93c5fd;--brandsoft:#172238;--gold:#fbbf24;--goldsoft:#2a2110;--ok:#4ade80;--shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px -14px rgba(0,0,0,.6)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}body{background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,100% - 32px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:.93rem;border:1px solid var(--line);background:var(--card);color:var(--ink);transition:.2s;cursor:pointer;font-family:inherit}
+.btn:hover{border-color:var(--ink2);transform:translateY(-1px)}
+.btn.p{background:var(--brand);border-color:var(--brand);color:#fff}.btn.p:hover{background:var(--brand2);border-color:var(--brand2)}
+:root[data-theme=dark] .btn.p{color:#0b0f17}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .btn.p{color:#0b0f17}}
+.btn.sm{padding:8px 13px;font-size:.86rem;border-radius:8px}
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand i{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font:700 .85rem var(--sans);font-style:normal}
+.nav-r{display:flex;gap:8px;align-items:center}
+.theme{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+@media (max-width:620px){.brand span{display:none}.hide-sm{display:none}}
+
+.crumbs{padding:22px 0 0;font-size:.88rem;color:var(--mute)}.crumbs a:hover{color:var(--ink)}
+.head{padding:22px 0 28px;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr}}
+.kind{font:600 .78rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:8px 0 12px}
+.award{display:inline-block;font-size:.84rem;font-weight:700;color:var(--gold);background:var(--goldsoft);padding:5px 11px;border-radius:8px;margin-bottom:12px}
+.pitch{color:var(--ink2);font-size:1.12rem;max-width:620px}
+.facts{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:18px 20px;display:grid;gap:10px;font-size:.92rem}
+.facts div{display:flex;justify-content:space-between;gap:12px}.facts b{color:var(--mute);font-weight:500}.facts span{text-align:right;font-weight:600}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+.demo{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.bar{display:flex;align-items:center;gap:7px;height:40px;padding:0 14px;border-bottom:1px solid var(--line);background:var(--bg2)}
+.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar .url{margin-left:10px;flex:1;min-width:0;font:500 .78rem var(--mono);color:var(--mute);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;padding:5px 10px;border-radius:6px;background:var(--card);border:1px solid var(--line)}
+.bar .live{font:600 .72rem var(--mono);color:var(--ok)}
+.bar button{border:0;background:none;color:var(--ink2);cursor:pointer;font:600 .8rem var(--sans);padding:6px 8px;border-radius:6px}.bar button:hover{background:var(--card)}
+.frame{position:relative;height:min(76vh,760px);background:var(--bg2)}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--mute);font-size:.9rem}
+.nodemo{padding:48px 24px;text-align:center}.nodemo h3{font-size:1.3rem;margin-bottom:8px}.nodemo p{color:var(--ink2);max-width:520px;margin:0 auto 18px}
+.hint{font-size:.84rem;color:var(--mute);margin-top:10px}
+
+section{padding:56px 0}
+h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;font-weight:800;margin-bottom:22px}
+.eyebrow{font:600 .76rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.st{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--card);position:relative;overflow:hidden}
+.st::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--accent)}
+.st span{font:600 .76rem var(--mono);color:var(--accent)}.st h3{font-size:1.05rem;margin:6px 0}.st p{color:var(--ink2);font-size:.94rem}
+.stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.sk{display:flex;gap:14px;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.sk-ico{width:40px;height:40px;flex:none;object-fit:contain}
+.glyph{display:grid;place-items:center;border-radius:10px;background:var(--bg2);color:var(--c);font:700 1rem var(--mono);border:1px solid var(--line)}
+.sk h4{font-size:.98rem}.sk p{color:var(--ink2);font-size:.88rem;margin-top:3px}
+.cta{border:1px solid var(--line);border-radius:18px;background:var(--brandsoft);padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px}
+.cta h3{font-size:1.35rem;letter-spacing:-.01em}.cta p{color:var(--ink2)}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pager a{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:.2s}
+.pager a:hover{border-color:var(--brand);box-shadow:var(--shadow)}
+.pager small{color:var(--mute);font-size:.8rem}.pager b{display:block;font-size:1.02rem;margin-top:2px}
+.pager a:last-child{text-align:right}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}footer a:hover{color:var(--ink)}
+.rv{opacity:0;transform:translateY(16px);transition:.6s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><i>KG</i><span>Khuwaish Goyal</span></a>
+  <div class="nav-r">
+    <a class="btn sm" href="index.html#work">← All projects</a>
+    <button class="theme" id="theme" aria-label="Toggle dark mode">◐</button>
+    <a class="btn p sm hide-sm" href="index.html#contact">Hire me</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <p class="crumbs"><a href="index.html">Home</a> / <a href="index.html#work">Work</a> / <span id="crumb"></span></p>
+  <div class="head">
+    <div>
+      <p class="kind" id="kind"></p>
+      <h1 id="title"></h1>
+      <span class="award" id="award" hidden></span>
+      <p class="pitch" id="pitch"></p>
+      <div class="acts" id="acts"></div>
+    </div>
+    <aside class="facts" id="facts"></aside>
+  </div>
+
+  <div class="demo" id="demo"></div>
+  <p class="hint" id="hint"></p>
+
+  <section class="rv"><p class="eyebrow">The story</p><h2>Problem → solution → result</h2><div class="story" id="story"></div></section>
+  <section class="rv"><p class="eyebrow">Tech stack</p><h2>Skills I used and how</h2><div class="stack" id="stack"></div></section>
+  <section class="rv"><div class="cta"><div><h3>Want something like this for your business?</h3><p>I can build, adapt or extend this for your use case.</p></div><div class="acts" style="margin:0"><a class="btn p" href="index.html#contact">Start a project →</a><a class="btn" href="assets/Khuwaish_Goyal_Master_Resume.pdf" download>Download CV</a></div></div></section>
+  <section><div class="pager" id="pager"></div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Khuwaish Goyal</span><span><a href="index.html">Home</a> · <a href="https://github.com/KhuwaishGoyal28" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/khuwaishgoyal" target="_blank" rel="noopener">LinkedIn</a></span></div></footer>
+
+<script src="data.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id), root = document.documentElement;
+  $('yr').textContent = new Date().getFullYear();
+  try { const t = localStorage.getItem('kg-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  $('theme').onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark'; try { localStorage.setItem('kg-theme', root.dataset.theme); } catch (e) {}
+  };
+
+  const { SKILLS, PROJECTS, icon } = KG;
+  const list = PROJECTS.filter(p => p.id !== 'dashboards');
+  let i = list.findIndex(p => p.id === new URLSearchParams(location.search).get('p'));
+  if (i < 0) i = 0;
+  const P = list[i];
+  root.style.setProperty('--accent', P.accent);
+  document.title = P.title + ' — Case study · Khuwaish Goyal';
+  $('crumb').textContent = P.title; $('kind').textContent = P.kind; $('title').textContent = P.title; $('pitch').textContent = P.pitch;
+  const aw = P.award || '';
+  if (/1st|Top|🏆|★/.test(aw)) { $('award').hidden = false; $('award').textContent = aw; }
+
+  $('acts').innerHTML = (P.demo ? `<a class="btn p" href="${P.demo}" target="_blank" rel="noopener">Open live demo ↗</a>` : '') +
+    `<a class="btn" href="${P.src}" target="_blank" rel="noopener">View code on GitHub ↗</a>`;
+  $('facts').innerHTML = [
+    ['Type', P.kind], ['Status', P.demo ? '● Live' : 'Code on GitHub'],
+    ['Stack', P.stack.map(k => SKILLS[k].name.replace(/ (.*)/, '')).join(', ')], ['Recognition', /1st|Top/.test(aw) ? aw.replace(/[🏆★]\s*/, '') : '—']
+  ].map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
+
+  if (P.demo) {
+    $('demo').innerHTML = `<div class="bar"><i></i><i></i><i></i><span class="url">${P.demo}</span><span class="live">● LIVE</span>
+      <button id="reload" title="Reload demo">↻</button><button id="full" title="Full screen">⛶</button></div>
+      <div class="frame" id="frame"><div class="loading">Loading live demo…</div>
+      <iframe src="${P.demo}" title="${P.title} live demo" allow="camera; microphone; fullscreen" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"></iframe></div>`;
+    $('hint').textContent = 'This is the real app running live — click inside and use it. Sign-ins and data are demo-only and stay in your browser.';
+    $('reload').onclick = () => { const f = document.querySelector('.frame iframe'); f.src = f.src; };
+    $('full').onclick = () => { const f = $('frame'); (f.requestFullscreen || f.webkitRequestFullscreen).call(f); };
+  } else {
+    $('demo').innerHTML = `<div class="nodemo"><h3>No live web demo for this one</h3><p>It runs locally with a trained model or desktop tool. The full code, notebooks and setup steps are on GitHub.</p><a class="btn p" href="${P.src}" target="_blank" rel="noopener">View on GitHub ↗</a></div>`;
+  }
+
+  const labels = ['01 · Problem', '02 · What I built', '03 · How it works', '04 · Result'];
+  $('story').innerHTML = P.steps.map((s, k) => `<div class="st"><span>${labels[k] || ''}</span><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+  $('stack').innerHTML = P.stack.map(k => `<div class="sk">${icon(k)}<div><h4>${SKILLS[k].name}</h4><p>${SKILLS[k].how}</p></div></div>`).join('');
+
+  const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
+  $('pager').innerHTML = `<a href="case.html?p=${prev.id}"><small>← Previous case study</small><b>${prev.title}</b></a><a href="case.html?p=${next.id}"><small>Next case study →</small><b>${next.title}</b></a>`;
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

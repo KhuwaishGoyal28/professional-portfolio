@@ -369,7 +369,7 @@ footer a:hover{color:var(--ink)}
     try { localStorage.setItem('kg-theme', root.dataset.theme); } catch (e) {}
   };
 
-  const P = 'https://khuwaish-portfolio.vercel.app/project.html?p=';
+  const P = 'case.html?p=';
   const WORK = [
     { t: 'EvalPro — AI Exam Evaluator', k: 'AI web app', c: 'AI', live: 'https://ai-exam-evaluator-nine.vercel.app', src: 'ai-exam-evaluator', case: 'evalpro', g: '#0f766e',
       p: 'Upload a handwritten answer sheet; get OCR text, a 50-point rubric score and an annotated teacher-style checked paper.',
@@ -437,7 +437,7 @@ footer a:hover{color:var(--ink)}
           <div class="acts">
             <a class="btn p sm" href="${w.live}" target="_blank" rel="noopener">Live demo ↗</a>
             <a class="btn sm" href="https://github.com/KhuwaishGoyal28/${w.src}" target="_blank" rel="noopener">Code</a>
-            ${w.case ? `<a class="btn sm" href="${P + w.case}" target="_blank" rel="noopener">Case study</a>` : ''}
+            ${w.case ? `<a class="btn sm" href="${P + w.case}">Case study →</a>` : ''}
           </div>
         </div>
       </article>`).join('');
